@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>IPL Ticket Booking - Form</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header>
+    <h1>IPL Ticket Booking</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="booking.html">Book Tickets</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Book Your IPL Tickets</h2>
+
+    <!-- Ticket Booking Form -->
+    <form action="#" method="POST">
+      
+      <!-- Full Name -->
+      <div>
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name" required minlength="3" maxlength="50" placeholder="Enter your full name">
+      </div>
+
+      <br>
+
+      <!-- Email Address -->
+      <div>
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" required placeholder="abc@mail.com">
+      </div>
+
+      <br>
+
+      <!-- Phone Number -->
+      <div>
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" required pattern="[0-9]{10}" placeholder="10-digit mobile number only">
+      </div>
+
+      <br>
+
+      <!-- Match Selection Dropdown -->
+      <div>
+        <label for="match">Select Match:</label>
+        <select id="match" name="match" required>
+          <option value="" disabled selected>-- Select a Match --</option>
+          <option value="MI vs CSK">MI vs CSK - WankhedeStadium</option>
+          <option value="MI vs KKR">MI vs KKR -  M. Chinnaswamy Stadium</option>
+          <option value="GT vs RR">GT vs RR - Narendra Modi Stadium</option>
+        </select>
+      </div>
+      <br>
+      <!-- Stand Category Dropdown -->
+      <div>
+        <label for="stand">Stand Category:</label>
+        <select id="stand" name="stand" required>
+          <option value="" disabled selected>-- Select Stand Category --</option>
+          <option value="General">General Stand (₹1,500)</option>
+          <option value="Premium">Premium Stand (₹3,500)</option>
+          <option value="VIP">VIP Box (₹8,000)</option>
+        </select>
+      </div>
+      <br>
+      <!-- Number of Tickets -->
+      <div>
+        <label for="tickets">Number of Tickets:</label>
+        <input type="number" id="tickets" name="tickets" required min="1" max="10" placeholder="1-23">
+      </div>
+      <br>
+      <!-- Additional Preference (Radio Buttons) -->
+      <div>
+        <p>Seating Tier Preference:</p>
+        <input type="radio" id="lower" name="tier" value="Lower Tier" checked>
+        <label for="lower">Lower Tier</label>
+
+        <input type="radio" id="upper" name="tier" value="Upper Tier">
+        <label for="upper">Upper Tier</label>
+      </div>
+      <br>
+      <div>
+        <button type="submit">Submit Booking</button>
+        <button type="reset">Reset Form</button>
+      </div>
+
+    </form>
+  </main>
+
+</body>
+</html>
