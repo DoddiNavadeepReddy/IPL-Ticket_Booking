@@ -32,6 +32,31 @@ document.addEventListener("DOMContentLoaded", () => {
     "MI vs CSK": { General: 2500, Premium: 5500, VIP: 23000 },
     "MI vs RCB": { General: 1500, Premium: 2000, VIP: 7500 }
   };
+  // Filter Match Cards by Team
+const teamFilter = document.getElementById("team-filter");
+const matchCards = document.querySelectorAll(".match-card");
+
+if (teamFilter) {
+  teamFilter.addEventListener("change", () => {
+    const selectedTeam = teamFilter.value.toLowerCase();
+    matchCards.forEach((card) => {
+      const teams = card.getAttribute("data-teams") || "";
+      card.style.display = (selectedTeam === "all" || teams.includes(selectedTeam)) ? "block" : "none";
+    });
+  });
+}
+
+// Toggle Between Grid and List Views
+const viewToggle = document.getElementById("view-toggle");
+const matchGrid = document.getElementById("match-grid");
+
+if (viewToggle && matchGrid) {
+  viewToggle.addEventListener("click", () => {
+    matchGrid.classList.toggle("list-view");
+    const isList = matchGrid.classList.contains("list-view");
+    viewToggle.textContent = isList ? "Switch to Grid View" : "Switch to List View";
+  });
+}
 
   function updateSummary(notify = true) {
     if (!matchSelect || !standSelect || !ticketsInput) return;
