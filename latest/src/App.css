@@ -17,7 +17,31 @@ body {
   gap: 20px;
   margin: 0;
 }
+/* Global Button Style for All React Components */
+button,
+.btn-cta {
+  background-color: #4caf50;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+  margin: 4px;
+  transition: background-color 0.2s ease;
+}
 
+button:hover,
+.btn-cta:hover {
+  background-color: #43a047;
+}
+
+button:disabled {
+  background-color: #94a3b8;
+  cursor: not-allowed;
+}
 .hero {
   text-align: center;
   padding: 40px 20px;

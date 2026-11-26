@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-    
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IPL Ticket Booking</title>
     <link rel="stylesheet" href="styles.css">
-    
 </head>
 
 <body>
@@ -18,7 +17,7 @@
                 <li><a href="#Matches">Matches</a></li>
                 <li><a href="#Book Tickets">Book Tickets</a></li>
                 <li><a href="#My Bookings">My Bookings</a></li>
-                <li><a href="#Guidelines">Guidlines</a></li>
+                <li><a href="#Guidelines">Guidelines</a></li>
                 <li><a href="booking.html">Book Tickets forms</a></li>
             </ul>
         </nav>
@@ -26,14 +25,13 @@
 
     <section id="hero">
         <h1>Experience The Stadium Energy Live!</h1>
-        <button>View Schedule</button>
-        
-        <button class="book-btn">Book Ticket</button>
+        <a href="#Matches"><button type="button">View Schedule</button></a>
+        <a href="#Book Tickets"><button type="button" class="book-btn">Book Ticket</button></a>
     </section>
 
     <section id="about">
         <h2>About IPL 2026</h2>
-        
+
         <h3>Popular Teams</h3>
         <ul>
             <li>Mumbai Indians</li>
@@ -53,7 +51,7 @@
 
     <section id="Matches">
         <h2>Match Schedule</h2>
-        
+
         <!-- Team Filter & Grid/List View Toggle -->
         <label for="team-filter">Filter by Team: </label>
         <select id="team-filter">
@@ -73,7 +71,7 @@
                 <p><strong>Date & Time:</strong> April 23, 2026 - 7:30 PM</p>
                 <p><strong>Venue:</strong> Bengaluru</p>
                 <p><strong>Ticket Prices (General / Premium / VIP):</strong> ₹2,500 / ₹5,500 / ₹23,000</p>
-                <button class="book-btn">Book</button>
+                <button type="button" class="book-btn">Book</button>
             </div>
 
             <div class="match-card" data-teams="mi rcb" data-match="MI vs RCB">
@@ -82,78 +80,76 @@
                 <p><strong>Date & Time:</strong> April 26, 2026 - 7:30 PM</p>
                 <p><strong>Venue:</strong> Mumbai</p>
                 <p><strong>Ticket Prices (General / Premium / VIP):</strong> ₹1,500 / ₹2,000 / ₹7,500</p>
-                <button class="book-btn">Book</button>
+                <button type="button" class="book-btn">Book</button>
             </div>
         </div>
     </section>
 
-
     <section id="Book Tickets">
         <h2>Ticket Booking</h2>
 
+        <div class="booking-row">
+            <form id="booking-form">
+                <label for="match">Select Match:</label><br>
+                <select id="match">
+                    <option value="MI vs CSK">MI vs CSK</option>
+                    <option value="MI vs RCB">MI vs RCB</option>
+                </select><br><br>
 
-        <form>
-            <label for="match">Select Match:</label><br>
-            <select id="match">
-                <option>MI vs CSK</option>
-                <option>MI vs RCB</option>
-            </select><br><br>
+                <label for="stand">Stand Category:</label><br>
+                <select id="stand">
+                    <option value="General">General</option>
+                    <option value="Premium">Premium</option>
+                    <option value="VIP">VIP</option>
+                </select><br><br>
 
-            <label for="stand">Stand Category:</label><br>
-            <select id="stand">
-                <option>General</option>
-                <option>Premium</option>
-                <option>VIP</option>
-            </select><br><br>
+                <label for="tickets">Number of Tickets:</label><br>
+                <input type="number" id="tickets" value="1" min="1" max="10" required><br><br>
 
-            <label for="tickets">Number of Tickets:</label><br>
-            <input type="number" id="tickets"><br><br>
+                <label for="name">Name:</label><br>
+                <input type="text" id="name" required><br><br>
 
-            <label for="name">Name:</label><br>
-            <input type="text" id="name"><br><br>
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" required><br><br>
 
-            <label for="email">Email:</label><br><input type="email" id="email"><br><br>
+                <label for="phone">Phone Number:</label><br>
+                <input type="tel" id="phone" required><br><br>
 
-            <label for="phone">Phone Number:</label><br>
-            <input type="tel" id="phone"><br><br>
+                <button type="submit">Confirm Booking</button>
+            </form>
 
-            <button type="submit">Confirm Booking</button>
-        </form>
-
-        <br>
-
-
-        <div>
-            <h3>Booking Summary</h3>
-            <p><strong>Match:</strong> <span id="summary-match">MI vs CSK</span></p>
-            <p><strong>Stand:</strong> <span id="summary-stand">General</span></p>
-            <p><strong>Price per Ticket:</strong> ₹<span id="summary-price">2,500</span></p>
-            <p><strong>Quantity:</strong> <span id="summary-qty">1</span></p>
-            <p><strong>Total Amount:</strong> ₹<span id="summary-total">2,500</span></p>
+            <div class="summary-box">
+                <h3>Booking Summary</h3>
+                <p><strong>Match:</strong> <span id="summary-match">MI vs CSK</span></p>
+                <p><strong>Stand:</strong> <span id="summary-stand">General</span></p>
+                <p><strong>Price per Ticket:</strong> ₹<span id="summary-price">2,500</span></p>
+                <p><strong>Quantity:</strong> <span id="summary-qty">1</span></p>
+                <p><strong>Total Amount:</strong> ₹<span id="summary-total">2,500</span></p>
+            </div>
         </div>
     </section>
 
-<section id="My Bookings">
-    <h2>My Ticket Bookings</h2>
-    <table>
-        <thead>
-            <tr>
-                <th>Match</th>
-                <th>Stand</th>
-                <th>Tickets</th>
-                <th>Total Price</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>MI vs CSK</td>
-                <td>VIP</td>
-                <td>2</td>
-                <td>₹46,000</td>
-            </tr>
-        </tbody>
-    </table>
-</section>
+    <section id="My Bookings">
+        <h2>My Ticket Bookings</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Match</th>
+                    <th>Stand</th>
+                    <th>Tickets</th>
+                    <th>Total Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>MI vs CSK</td>
+                    <td>VIP</td>
+                    <td>2</td>
+                    <td>₹46,000</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
 
     <section id="Guidelines">
         <h2>Match Guidelines</h2>

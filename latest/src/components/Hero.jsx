@@ -8,4 +8,10 @@ function Hero({ selectedCount }) {
   );
 }
 
+<img
+  src="/IMG/trophy.png"
+  alt="IPL Championship Trophy"
+  className="hero-trophy-img"
+/>
+
 export default Hero;

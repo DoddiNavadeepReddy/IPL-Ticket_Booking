@@ -295,6 +295,37 @@ header .hamburger {
   grid-template-columns: 1fr;
 }
 
+/* Global Button Style for All Static Pages (index.html, booking.html, etc.) */
+button {
+  background-color: #4caf50;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+  margin: 4px;
+  transition: background-color 0.2s ease;
+}
+
+button:hover {
+  background-color: #43a047;
+}
+
+/* Keep the mobile hamburger icon transparent so it doesn't turn into a green box */
+header .hamburger {
+  background-color: transparent;
+  color: #222222;
+  padding: 4px 8px;
+  margin: 0;
+  font-size: 26px;
+}
+
+header .hamburger:hover {
+  background-color: #eeeeee;
+}
 .match-card {
   padding: 16px;
   border: 1px solid currentColor;
@@ -305,4 +336,43 @@ header .hamburger {
   .match-grid {
     grid-template-columns: 1fr;
   }
+}
+
+/* Keep Ticket Booking Form (Left) & Booking Summary (Right) Side-by-Side */
+[id="Book Tickets"] {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  align-items: flex-start;
+}
+
+[id="Book Tickets"] > h2 {
+  width: 100%;
+}
+
+[id="Book Tickets"] > br {
+  display: none;
+}
+
+[id="Book Tickets"] > form,
+.booking-row > form {
+  flex: 1;
+  min-width: 200px;
+}
+
+.booking-row {
+  width: 100%;
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+}
+
+[id="Book Tickets"] > div:not(.booking-row),
+.summary-box {
+  flex: 1;
+  min-width: 200px;
+  background-color: #f5f5f5;
+  border: 1px solid #ddd;
+  padding: 16px 20px;
+  border-radius: 6px;
 }
